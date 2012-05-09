@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.tyrellcorp.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/inceptproc/greet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>gServlet</servlet-name>
+    <servlet-class>com.tyrellcorp.server.CopyOfGreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>gServlet</servlet-name>
+    <url-pattern>/inceptproc/greet2</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>invServlet</servlet-name>
+    <servlet-class>com.tyrellcorp.server.InventoryManagementServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>invServlet</servlet-name>
+    <url-pattern>/inceptproc/inventory</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>productionServlet</servlet-name>
+    <servlet-class>com.tyrellcorp.server.ProductionManagementServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>productionServlet</servlet-name>
+    <url-pattern>/inceptproc/production</url-pattern>
+  </servlet-mapping>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>InceptProc.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

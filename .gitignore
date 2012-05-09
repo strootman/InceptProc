@@ -1,0 +1,12 @@
+/build
+/classes
+www-test
+gwt-unitCache
+*.jar
+*.class
+*~
+**/inceptproc
+war/WEB-INF/classes
+war/WEB-INF/deploy
+target
+.settings
