@@ -75,6 +75,6 @@ public class Replicant implements Serializable
 	@Override
 	public String toString()
 	{
-		return model + " " + identifier + " " + name;
+		return model + " " + identifier + " " + name + " " + inceptDate.toString();
 	}
 }
