@@ -42,12 +42,12 @@ public class InceptProc implements EntryPoint {
 		final ListBox dropDownModels = new ListBox();
 		final Label lblUuid = new Label("{no identifier defined}");
 		final Button btnGenId = new Button("Generate");
-		
+
 		final TextBox tBoxReplName = new TextBox();
-		
+
 		final Button btnAddRepl = new Button("Add");
 		final Button btnShowProd = new Button("Total");
-		
+
 		final Label lblError = new Label("");
 		lblError.setStyleName("errorMessage");
 		lblError.setVisible(false);
@@ -110,10 +110,9 @@ public class InceptProc implements EntryPoint {
 				prodService.getProductionManifest(new AsyncCallback<List<Replicant>>() {
 					@Override
 					public void onSuccess(List<Replicant> result) {
-						// TODO Wire these UI elements to CSS
 						final ListBox productionReplicants = new ListBox(false);
 						for(Replicant r : result){
-							productionReplicants.addItem(r.toString());
+							productionReplicants.addItem(r.getModel() + "; " + r.getName());
 						}
 						productionReplicants.setVisibleItemCount(result.size());
 
@@ -134,7 +133,7 @@ public class InceptProc implements EntryPoint {
 						});
 						popup.show();
 					}
-					
+
 					@Override
 					public void onFailure(Throwable caught) {
 						GWT.log("Failed to retrieve replicant production manifest");
@@ -146,7 +145,6 @@ public class InceptProc implements EntryPoint {
 		btnAddRepl.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				// FIXME Found an error here, need to reproduce.
 				String model = dropDownModels.getItemText(dropDownModels.getSelectedIndex());
 				if(!FieldVerifier.isValidName(tBoxReplName.getText())){
 					tBoxReplName.selectAll();
@@ -178,7 +176,7 @@ public class InceptProc implements EntryPoint {
 			}
 			@Override
 			public void onFailure(Throwable caught) {
-				GWT.log("OH NO!");
+				GWT.log("Nexus Service greeting failure.");
 			}
 		});
 	}
