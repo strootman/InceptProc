@@ -5,20 +5,9 @@
          version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee">
 
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.tyrellcorp.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/inceptproc/greet</url-pattern>
-  </servlet-mapping>
-
   <servlet>
     <servlet-name>gServlet</servlet-name>
-    <servlet-class>com.tyrellcorp.server.CopyOfGreetingServiceImpl</servlet-class>
+    <servlet-class>com.tyrellcorp.server.NexusGreetingServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>

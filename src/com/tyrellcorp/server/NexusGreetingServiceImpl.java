@@ -1,13 +1,13 @@
 package com.tyrellcorp.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.tyrellcorp.client.CopyOfGreetingService;
+import com.tyrellcorp.client.NexusGreetingService;
 
 /**
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class CopyOfGreetingServiceImpl extends RemoteServiceServlet implements CopyOfGreetingService
+public class NexusGreetingServiceImpl extends RemoteServiceServlet implements NexusGreetingService
 {
 
 	public String greetServer(String input) throws IllegalArgumentException

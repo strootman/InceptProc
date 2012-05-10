@@ -10,6 +10,9 @@ public class Replicant implements Serializable
 	private String model;
 	private String name;
 	private String identifier;
+	/**
+	 * The date a replicant is activated, its birth date.
+	 */
 	private Date inceptDate;
 
 	public Replicant() { }
@@ -21,6 +24,13 @@ public class Replicant implements Serializable
 		this.inceptDate = incept;
 	}
 
+	public Replicant(String model, String name, String id) {
+		this.model = model;
+		this.name = name;
+		this.identifier = id;
+		this.inceptDate = new Date(System.currentTimeMillis() + 4 * 3600000L);
+	}
+	
 	public String getModel()
 	{
 		return model;
@@ -60,8 +70,10 @@ public class Replicant implements Serializable
 	 * Los Angeles 2019 
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj) {
+		if((obj == null) || !(obj instanceof Replicant))
+			return false;
+		
 		Replicant rhs = (Replicant)obj;
 		return this.identifier.equals(rhs.identifier);
 	}
